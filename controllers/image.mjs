@@ -57,6 +57,12 @@ export const handleImage = (req, res, db) => {
         .catch(err => res.status(400).json('unable to get entries'));
 }
 
-export const test = (req, res) => {
-    res.json('this is a test1');
+export const test = (req, res, db) => {
+    // res.json('this is a test');
+    // return db.select('*').from('users')
+    return db('users')
+    .then(user => {
+        res.json(user[0])
+    })
+    .catch(err => res.status(400).json('unable to get user'))
 }
