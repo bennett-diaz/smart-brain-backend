@@ -11,13 +11,6 @@ import * as dotenv from 'dotenv'
 dotenv.config()
 
 const PORT = process.env.PORT
-console.log(process.env.DB_URL)
-console.log(process.env.DB_HOST)
-console.log(process.env.DB_PORT)
-console.log(process.env.DB_USER)
-console.log(process.env.DB_PASSWORD)
-console.log(process.env.DB_DATABASE)
-
 
 const app = express();
 const db = knex({
