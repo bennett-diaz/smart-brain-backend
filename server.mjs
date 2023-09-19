@@ -11,6 +11,12 @@ import * as dotenv from 'dotenv'
 dotenv.config()
 
 const PORT = process.env.PORT
+console.log(process.env.DB_URL)
+console.log(process.env.DB_HOST)
+console.log(process.env.DB_PORT)
+console.log(process.env.DB_USER)
+console.log(process.env.DB_PASSWORD)
+console.log(process.env.DB_DATABASE)
 
 
 const app = express();
@@ -24,13 +30,7 @@ const db = knex({
         user: process.env.DB_USER,
         password: process.env.DB_PASSWORD,
         database: process.env.DB_DATABASE
-        // client: 'pg',
-        // connection: {
-        //     host: 'dpg-ck4scjgj9kis73d4iph0-a',
-        //     port: 5432,
-        //     user: 'smart_brain_db_ojcy_user',
-        //     password: 'MamQYfaM0nh7wFubvXoGDNtSL6AtrZAE',
-        //     database: 'smart_brain_db_ojcy'
+
     }
 });
 
