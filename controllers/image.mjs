@@ -37,7 +37,6 @@ const returnClarifaiRequestOptions = (imageUrl) => {
 
 
 export const handleFaceBox = ((req, res) => {
-    console.log(req.body.imageUrl);
     fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VERSION_ID + "/outputs", returnClarifaiRequestOptions(req.body.imageUrl))
         .then(response => response.json())
         .then(data => {
@@ -56,4 +55,8 @@ export const handleImage = (req, res, db) => {
             res.json(entries[0]);
         })
         .catch(err => res.status(400).json('unable to get entries'));
+}
+
+export const test = (req, res) => {
+    res.json('this is a test1');
 }
