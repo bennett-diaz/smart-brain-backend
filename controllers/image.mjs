@@ -59,8 +59,6 @@ export const handleImage = (req, res, db) => {
 }
 
 export const test = (req, res, db) => {
-    // res.json('this is a test');
-    // return db.select('*').from('users')
     return db('users')
     .then(user => {
         res.json(user[0])
